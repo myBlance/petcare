@@ -117,14 +117,14 @@ nav ul li a {
 }
 
 .hero-text .logo img{
-    height: 60px;;
+    height: 60px;
 }
 
 .hero-image img {
     width: 70%;    
     position: absolute;
     z-index: 1;
-    top: 5%;
+    top: 10%;
     left: 30%;
 }
 
@@ -138,7 +138,7 @@ nav ul li a {
     font-size: 2.8rem;
     color: var(--text-color-secondary);
     font-weight: bold;
-    line-height: 1.6;
+    line-height: 1.9;
     max-width: 100%;
     display: inline;
 }
@@ -188,7 +188,7 @@ nav ul li a {
 .google-play img:last-child {
     position: absolute;
     top: -40px;  /* Điều chỉnh vị trí mèo */
-    left: 45px;
+    left: 30px;
     width: 40px; /* Kích thước mèo */
     height: auto;
 }
@@ -238,7 +238,7 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10% 10% 0;
+    padding: 15% 10% 0;
     background-color: var(--background-color);
     position: relative;
 }
@@ -252,8 +252,8 @@ nav ul li a {
 }
 
 .about-image img {
-    width: 110%;
-    left: 7%;
+    width: 100%;
+    left: 6%;
     z-index: 2;
 }
 
@@ -317,14 +317,24 @@ nav ul li a {
 }
 
 /* Phần tính năng chính */
+/* Phần tính năng chính */
 .features {
     text-align: center;
-    padding: 40px 0 60px;
+    padding: 100px 0 60px;
     background-color: var(--background-color);
+    position: relative; /* Giúp ảnh bám vào phần này */
 }
 
-.section-title {
-    font-size: 32px;
+.features .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.features .section-title {
+    font-size: 48px;
+    margin: 0;
     color: var(--text-color-secondary);
     font-weight: bold;
     display: flex;
@@ -333,16 +343,32 @@ nav ul li a {
     gap: 10px;
 }
 
-.section-title::before {
-    content: url(''); /* Icon dấu chân */
+.features .container img {
+    position: absolute;
+    right: 0px; 
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 250px;
+    height: auto;
+}
+
+
+.container .section-title::before {
+    content: "";
     display: inline-block;
     width: 32px;
     height: 32px;
+    background-image: url('./images/Vector8.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 8px; /* Khoảng cách giữa icon và chữ */
+    vertical-align: middle;
 }
 
+
 .section-subtitle {
-    font-size: 18px;
-    color: var(--secondary-color);
+    font-size: 20px;
+    color: var(--text-color-quaternary);
     margin-bottom: 40px;
 }
 
@@ -469,17 +495,24 @@ nav ul li a {
 
 
 /* Review */
-.reviews {
-    text-align: center;
-    padding: 80px 0;
-    background-color: var(--background-color);
+.reviews{
+    margin: 100px 0 100px 0;
 }
 
 .section-title {
-    font-size: 32px;
+    margin: 50px 20px 80px 20% ;
+    white-space: nowrap; 
+    display: inline-flex; /* Giúp chữ và ảnh nằm trên cùng một dòng */
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    font-size: 30px;
     color: var(--text-color-secondary);
     font-weight: bold;
-    margin-bottom: 40px;
+    gap: 5%; /* Tạo khoảng cách giữa chữ và ảnh */
+}
+
+.section-title img {
+    width: 32px;  /* Điều chỉnh kích thước ảnh */
+    height: auto;
 }
 
 /* Container chứa các review */
@@ -487,7 +520,7 @@ nav ul li a {
     display: flex;
     justify-content: center;
     gap: 20px;
-    overflow: hidden;
+    overflow-x: auto;
     width: 90%;
     margin: auto;
 }
@@ -611,7 +644,8 @@ footer {
 
 .background {
     position: relative;
-    height: 100vh; 
+    height: 80vh; 
+    width: 100%;
     background-color: #e0f7fa; /* Màu nền */
     background-image: url('./images/photo7.jpg');
     background-size: cover; 
@@ -658,7 +692,8 @@ footer {
 
 .contact-button:hover {
     background-color: #3ab0a6;  
-    color: var(--text-color-quinary);                
+    color: var(--text-color-quinary); 
+                  
 }
 .footer-container {
     display: flex;              

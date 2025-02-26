@@ -1,20 +1,29 @@
-/* Định dạng chung */
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('./fonts/SVN-Gotham\ Black.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Black\ Italic.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Bold.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Bold.ttf') format('woff'),
-        url('./fonts/SVN-Gotham\ Bold\ Italic.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Book.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Book\ Italic.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Italic.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Light.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Light.ttf') format('woff'),
-        url('./fonts/SVN-Gotham\ Light\ Italic.otf') format('woff'),
-        url('./fonts/SVN-Gotham\ Regular.otf') format('woff');
+    src: url('./fonts/SVN-Gotham\ Book.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/SVN-Gotham\ Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/SVN-Gotham\ Book\ Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('./fonts/SVN-Gotham\ Bold\ Italic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
 }
 
 :root{
@@ -165,6 +174,7 @@ nav ul li a {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    transition: 0.3s
 }
 
 .download-buttons :hover{
@@ -207,7 +217,8 @@ nav ul li a {
 
 .stat-box {
     display: flex;
-    background-color: #FFF7D9;
+    background-color: #BEF6FF;
+    width: 215px;
     padding: 20px 30px;
     text-align: left;
     border-radius: 12px;
@@ -215,6 +226,12 @@ nav ul li a {
     min-width: auto;
     align-items: center;
     gap: 10px;
+    transition: 0.3s
+}
+
+.stat-box:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .stat-box h2 {
@@ -258,15 +275,22 @@ nav ul li a {
     z-index: 2;
 }
 
+.phone img{
+    z-index: 3;
+    position: relative;
+    margin: 20px 20px 0 0;
+}
+
 /* Background hình tròn */
 .circle-bg {
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 70%;
     background: radial-gradient(circle, rgba(0, 196, 204, 0.2), rgba(255, 255, 255, 0));
     border-radius: 50%;
     position: absolute;
     top: 10%;
     left: 10%;
+    bottom: 500px;
     z-index: 1;
 }
 
@@ -280,7 +304,12 @@ nav ul li a {
 
 .icon-heart img {
     width: 60%;
+    transition: 0.3s;
+}
 
+.icon-heart img:hover{
+    transform: scale(1.2);
+    cursor:pointer;
 }
 
 /* Nội dung text */
@@ -351,6 +380,7 @@ nav ul li a {
     transform: translateY(-50%);
     max-width: 250px;
     height: auto;
+    
 }
 
 
@@ -386,8 +416,7 @@ nav ul li a {
     width: 320px;
     text-align: center;
     padding-bottom: 15px;
-    transition: transform 0.3s ease-in-out;
-    transform: translateY(-5px);
+    
 }
 
 .feature-item img:hover{
@@ -399,6 +428,7 @@ nav ul li a {
     height: 200px; /* Định chiều cao ảnh */
     object-fit: cover; /* Giữ tỷ lệ ảnh không bị méo */
     border-radius: 15px;
+    transition: 0.3s;
 }
 
 .feature-tag {
@@ -430,7 +460,7 @@ nav ul li a {
 /* Container chính */
 .experience {
     background-color: var(--background-color);
-    padding: 40px;
+    padding: 80px 40px 40px;
 }
 
 .experience h2 {
@@ -445,29 +475,40 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 50px 0;
     gap: 30px;
 }
 
 /* Danh sách trải nghiệm */
 .experience-list {
+    display: flex;
+    flex-direction: column; /* Xếp các mục theo chiều dọc */
+   
     flex: 1;
     margin-left: 5%;
-    align-items: center;
+    align-items: flex-start;
 }
+
+
 
 /* Các mục */
 .experience-item {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 0px 15px;
 }
 
 /* Icon */
 .experience-icon img {
     width: 40px;
     height: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.experience-icon img:hover{
+    transform: scale(1.2);
 }
 
 /* Nội dung text */
@@ -497,11 +538,11 @@ nav ul li a {
 
 /* Review */
 .reviews{
-    margin: 100px 0 100px 0;
+    padding: 80px 0;
 }
 
 .section-title {
-    margin: 50px 20px 80px 20% ;
+    margin: 0px 20px 80px 20% ;
     white-space: nowrap; 
     display: inline-flex; /* Giúp chữ và ảnh nằm trên cùng một dòng */
     align-items: center;  /* Căn giữa theo chiều dọc */
@@ -512,7 +553,7 @@ nav ul li a {
 }
 
 .section-title img {
-    width: 32px;  /* Điều chỉnh kích thước ảnh */
+    width: 38px;  /* Điều chỉnh kích thước ảnh */
     height: auto;
 }
 
@@ -529,7 +570,7 @@ nav ul li a {
 /* Mỗi review sẽ hiển thị theo dạng card */
 .review-wrapper {
     display: flex;
-    margin: 0 50px;
+    margin: 10px 50px;
     flex-direction: column;
     gap: 20px;
     flex: 1 1 30%; /* Đảm bảo có 3 review trên một hàng */
@@ -538,7 +579,7 @@ nav ul li a {
 
 /* Thiết kế card của review */
 .review-card {
-    background: #FFF8E5;
+    background: #BEF6FF;
     padding: 20px;
     border-radius: 12px;
     height: auto;
@@ -546,6 +587,12 @@ nav ul li a {
     width: 300px;
     height: 150px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.review-card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* Phần header của review chứa avatar + tên + điểm số */
@@ -636,8 +683,6 @@ nav ul li a {
     padding: 10px;
 }
 
-
-
 /* footer */
 footer {         
     text-align: center;  
@@ -645,9 +690,9 @@ footer {
 
 .background {
     position: relative;
-    height: 80vh; 
+    height: 100vh; 
     width: 100%;
-    background-color: #e0f7fa; /* Màu nền */
+    background-color: var(--text-color-secondary); /* Màu nền */
     background-image: url('./images/photo7.jpg');
     background-size: cover; 
 }
@@ -688,12 +733,13 @@ footer {
     font-size: 18px;
     cursor: pointer;           
     font-weight: bold;        
-    transition: background-color 0.3s;  
+    transition:  0.3s;  
 }
 
 .contact-button:hover {
     background-color: #3ab0a6;  
     color: var(--text-color-quinary); 
+    transform: scale(1.2);
                   
 }
 .footer-container {
@@ -727,6 +773,7 @@ footer {
 
 .social-contact a:hover{
     color: var(--primary-color);
+    transform: scale(1.2);
 }
 
 .social-links ul {
@@ -739,24 +786,31 @@ footer {
     color: var(--text-color-quaternary);   
     font-weight: bold;     
     line-height: 2;
-    font-size: 18px;
+    font-size: 16px;
 }
 
-.social-links ul li a:hover{
-    color: var(--primary-color);
-    transform: scale(1.2);
+
+.social-links ul li{
+    transition: 0.3s;
+}
+.social-links ul li:hover{
+    transform: scale(1.1);
 }
 
+.social-media {
+    padding: 10px 0;
+}
 
 .social-media .media a img {
-    margin: 10px;               
-    width: 25px;               
+    margin: 20px;               
+    width: 30px;               
     height: auto;      
     gap: 10px;       
+    transition: 0.3s;
 }
 
 .media a img:hover{
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 
 .gallery {
@@ -771,7 +825,10 @@ footer {
 .gallery img {
     width: calc(33.33% - 10px);
     margin: 5px;                           
-    height: auto;             
+    height: auto;    
+    transition: 0.3s;     
+    border-radius: 10px;   
+     
 }
 
 .gallery img:hover{
@@ -782,5 +839,13 @@ footer {
 .footer-bottom {
     margin-top: 20px;          
     color: var(--text-color-quaternary);               
-    font-size: 14px;           
+    font-size: 14px;       
+}
+
+.footer-line {
+    width: 80%; /* Điều chỉnh độ dài */
+    border: none;
+    height: 0.5px;
+    background-color: var(--primary-color);
+    margin: 10px auto 10px; /* Canh giữa và tạo khoảng cách */
 }

@@ -45,18 +45,25 @@ body {
     overflow-x: hidden;
 }
 
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Header */
 header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    position: fixed;
     background-color: var(--background-color);
-    padding: 25px 0 0;
+    padding: 15px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 4;
+    z-index: 999;
 }
 
 nav {
@@ -66,36 +73,38 @@ nav {
     align-items: center;
 }
 
+/* Logo */
 .logo img {
     height: 40px;
 }
 
+/* Menu */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
-    padding: 0;
+    gap: 20px;
 }
 
 nav ul li {
     display: inline;
 }
 
-nav ul li a:hover{
-    color: var(--text-color-secondary);
-}
-
 nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: var(--text-color-secondary);
+}
+
+/* Nút Đặt lịch */
 .contact {
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 
 .contact button {
@@ -107,13 +116,43 @@ nav ul li a {
     font-weight: bold;
     cursor: pointer;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .contact button:hover {
     background-color: #009BA0;
     color: var(--text-color);
     transform: scale(1.1);
+}
+
+/* Icon menu mobile */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--background-color);
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }
 
 /* Hero Section */
@@ -131,11 +170,11 @@ nav ul li a {
 }
 
 .hero-image img {
-    width: 70%;    
+    width: 60%;    
     position: absolute;
     z-index: 1;
     top: 10%;
-    left: 30%;
+    left: 40%;
 }
 
 .hero-text {
@@ -155,7 +194,7 @@ nav ul li a {
 
 .hero-text h1 > span {
     background-image: url(./images/Vector\ 5.png);
-    background-size: 100%;
+    background-size: cover;
     color: var(--text-color-secondary);
     max-width: 120%;
     margin-left: 20px;
@@ -218,7 +257,7 @@ nav ul li a {
     justify-content: center;
     gap: 30px;
     position: absolute;
-    bottom: -20%;
+    bottom: -6%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -227,7 +266,8 @@ nav ul li a {
 .stat-box {
     display: flex;
     background-color: #BEF6FF;
-    width: 215px;
+    width: 275px;
+    height: 120px;
     padding: 20px 30px;
     text-align: left;
     border-radius: 12px;
@@ -247,7 +287,7 @@ nav ul li a {
     font-size: 2.2rem;
     color: var(--text-color-tertiary);
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .stat-box:nth-child(3) h2 {
@@ -287,7 +327,7 @@ nav ul li a {
 .phone img{
     z-index: 3;
     position: relative;
-    margin: 20px 20px 0 0;
+    margin: 20px 30px 0 0;
 }
 
 /* Background hình tròn */
@@ -298,7 +338,7 @@ nav ul li a {
     border-radius: 50%;
     position: absolute;
     top: 10%;
-    left: 10%;
+    left: 13%;
     bottom: 500px;
     z-index: 1;
 }
@@ -355,7 +395,6 @@ nav ul li a {
     margin-top: 20px;
 }
 
-/* Phần tính năng chính */
 /* Phần tính năng chính */
 .features {
     text-align: center;
@@ -505,7 +544,7 @@ nav ul li a {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 0px 15px;
+    padding: 15px 15px;
 }
 
 /* Icon */
@@ -547,7 +586,7 @@ nav ul li a {
 
 /* Review */
 .reviews{
-    padding: 80px 0;
+    padding: 80px 0 120px;
 }
 
 .section-title {
@@ -581,7 +620,7 @@ nav ul li a {
     display: flex;
     margin: 10px 50px;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     flex: 1 1 30%; /* Đảm bảo có 3 review trên một hàng */
     transition: transform 0.5s ease-in-out;
 }
@@ -591,10 +630,9 @@ nav ul li a {
     background: #BEF6FF;
     padding: 20px;
     border-radius: 12px;
-    height: auto;
     text-align: left;
-    width: 300px;
-    height: 150px;
+    width: 320px;
+    height: 180px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
 }
@@ -648,6 +686,7 @@ nav ul li a {
 .review-date {
     text-align: left;
     font-size: 12px;
+    margin-top: 5px;
     color: var(--text-color-quaternary);
     font-weight: 500;
 }

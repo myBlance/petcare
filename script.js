@@ -61,3 +61,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Chạy ngay khi load xong
     updateDisplay();
 });
+

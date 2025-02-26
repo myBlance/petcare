@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('./fonts/SVN-Gotham\ Book.otf') format('opentype');
+    src: url('./fonts/SVN-Gotham\ Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -174,11 +174,6 @@ nav ul li a {
     display: flex;
     gap: 15px;
     margin-top: 20px;
-    transition: 0.3s
-}
-
-.download-buttons :hover{
-    transform: scale(1.05);
 }
 
 .download-buttons img {
@@ -190,6 +185,7 @@ nav ul li a {
 .google-play {
     position: relative;
     display: inline-block;
+    transition: 0.3s
 }
 
 .google-play img:first-child {
@@ -203,6 +199,19 @@ nav ul li a {
     width: 40px; /* Kích thước mèo */
     height: auto;
 }
+
+.download-buttons .app-store{
+    transition: 0.3s;
+}
+
+.download-buttons .app-store:hover{
+    transform: scale(1.05);
+}
+
+.download-buttons .google-play:hover{
+    transform: scale(1.05);
+}
+
 
 .stats {
     display: flex;

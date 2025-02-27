@@ -62,3 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateDisplay();
 });
 
+function toggleMenu() {
+    const menu = document.querySelector("nav ul");
+    menu.classList.toggle("active");
+}

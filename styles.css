@@ -142,18 +142,20 @@ nav ul li a:hover {
         left: 0;
         width: 100%;
         background: var(--background-color);
-        padding: 15px;
         text-align: center;
+        padding: 15px;
     }
 
-    nav ul.show {
+    nav ul.active {
         display: flex;
     }
 
     .menu-icon {
         display: block;
+        cursor: pointer;
     }
 }
+
 
 /* Hero Section */
 .hero {

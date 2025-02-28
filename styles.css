@@ -154,6 +154,13 @@ nav ul li a:hover {
         display: block;
         cursor: pointer;
     }
+
+    .reviews .section-title h2{
+        white-space: normal;  /* Cho phép xuống dòng khi màn nhỏ */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+   
 }
 
 
@@ -422,7 +429,7 @@ nav ul li a:hover {
     margin: 0;
     color: var(--text-color-secondary);
     font-weight: bold;
-    display: flex;
+    white-space: normal;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -597,8 +604,9 @@ nav ul li a:hover {
 }
 
 .section-title {
-    margin: 0px 20px 80px 20% ;
-    white-space: nowrap; 
+    margin: 0px 0px 80px 20% ;
+    text-align: center;
+    white-space: normal;
     display: inline-flex; /* Giúp chữ và ảnh nằm trên cùng một dòng */
     align-items: center;  /* Căn giữa theo chiều dọc */
     font-size: 30px;
@@ -607,8 +615,12 @@ nav ul li a:hover {
     gap: 5%; /* Tạo khoảng cách giữa chữ và ảnh */
 }
 
+.section-title h2{
+    white-space: nowrap;
+}
+
 .section-title img {
-    width: 38px;  /* Điều chỉnh kích thước ảnh */
+    width: auto;  /* Điều chỉnh kích thước ảnh */
     height: auto;
 }
 
